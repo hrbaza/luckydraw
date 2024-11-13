@@ -1,0 +1,371 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar Styles */
+nav {
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    background-color: yellow;
+    color: black;
+}
+
+/* Main Content */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    flex: 1 1;
+}
+
+.wheel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.wheel {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 15px solid gold;
+    background: conic-gradient(#ffeb3b 0% 16.66%, #ffcc00 16.66% 33.33%, #ffe135 33.33% 50%, #ffeb3b 50% 66.66%, #ffcc00 66.66% 83.33%, #ffe135 83.33% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 3s ease-out;
+    margin-top: 50px;
+}
+
+.label {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80px;
+    /* Increased size */
+    height: 80px;
+    /* Increased size */
+    border-radius: 50%;
+}
+
+.label img {
+    width: 60px;
+    /* Increased image size */
+    height: 60px;
+    /* Increased image size */
+    object-fit: contain;
+}
+
+#spinButton {
+    margin-top: 20px;
+    padding: 12px 24px;
+    border: none;
+    background-color: #ffeb3b;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#spinButton:hover {
+    background-color: #ffcc00;
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #fff;
+    border: 2px solid #ffeb3b;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+.popup button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #ffeb3b;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.popup button:hover {
+    background-color: #ffcc00;
+}
+
+/* Celebration Lighting Effect */
+.lighting-effect {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    pointer-events: none;
+    animation: flash 0.5s linear infinite;
+}
+
+.main-container {
+    background: rgba(252, 232, 25, 255);
+    background: radial-gradient(circle, rgba(243, 229, 181, 1) 0%, rgba(252, 232, 25, 255) 100%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 94px;
+    box-sizing: border-box;
+}
+
+.advertisement-container {
+
+    width: 25vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vh;
+
+}
+
+.advertisement-container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vh;
+    text-align: center;
+}
+
+.advertisement-container h1 {
+    text-align: center;
+    font-weight: 800;
+    font-size: 5rem;
+}
+
+.gift-container {
+    width: 25vw;
+    height: 100%;
+    position: relative;
+    background-image: url(imgs/giftboxes-removebg-preview.png);
+    background-size: 75%;
+}
+
+@keyframes flash {
+    0% {
+        background: rgba(255, 255, 0, 0.3);
+    }
+
+    50% {
+        background: rgba(255, 255, 255, 0.8);
+    }
+
+    100% {
+        background: rgba(255, 255, 0, 0.3);
+    }
+}
+
+.glow {
+    font-size: 4rem;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+/* WhatsApp Icon Styles */
+
+.whatsapp-icon:hover {
+    background-color: #4aec86;
+}
+
+.floater {
+    animation: floatUpDown 3s ease-in-out infinite, rotateImage 6s linear infinite;
+    /* Apply two animations */
+    display: block;
+}
+
+.whatsapp-icon {
+    color: #fff;
+    background-color: #25D366;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .wheel {
+        width: 250px;
+        height: 250px;
+        border: 10px solid #ffeb3b;
+    }
+
+    .label {
+        width: 60px;
+        height: 60px;
+    }
+
+    .label img {
+        width: 50px;
+        height: 50px;
+    }
+
+    #spinButton {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .main-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .main-container .gift-container {
+        width: 100%;
+    }
+
+    .advertisement-container {
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20vw;
+        height: auto;
+        margin-top: 5vh;
+    }
+
+    .advertisement-container div {
+        justify-content: space-between;
+        align-items: stretch;
+        height: 100%;
+
+    }
+
+    .advertisement-container h1 {
+        line-height: 0.3;
+        font-size: 8vw !important;
+    }
+
+    .advertisement-container h2 {
+        font-size: 4vw !important;
+    }
+
+    .gift-container {
+        background-size: 50%;
+    }
+}
+
+
+
+
+@media (max-width: 480px) {
+    .wheel {
+        width: 200px;
+        height: 200px;
+        border: 8px solid #ffeb3b;
+    }
+
+    .label {
+        width: 50px;
+        height: 50px;
+    }
+
+    .label img {
+        width: 40px;
+        height: 40px;
+    }
+
+    #spinButton {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    #label1 {
+        transform: rotate(0deg) translateX(75px) !important;
+    }
+
+    #label2 {
+        transform: rotate(60deg) translateX(75px) !important;
+    }
+
+    #label3 {
+        transform: rotate(120deg) translateX(75px) !important;
+    }
+
+    #label4 {
+        transform: rotate(180deg) translateX(75px) !important;
+    }
+
+    #label5 {
+        transform: rotate(240deg) translateX(75px) !important;
+    }
+
+    #label6 {
+        transform: rotate(300deg) translateX(75px) !important;
+    }
+
+
+}
